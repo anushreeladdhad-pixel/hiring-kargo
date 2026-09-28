@@ -1,0 +1,78 @@
+{
+  "PM": [
+    {
+      "sort_order": 1,
+      "name": "Self-Initiated Problem-Solving",
+      "weight": 30,
+      "description": "The CV names at least one specific, costly problem the candidate noticed on their own — not a task handed to them — and describes the specific action they took to fix it, without waiting for approval.",
+      "anchor_5": "Names a specific unassigned problem AND a specific self-built action taken to fix it.",
+      "anchor_3": "Describes initiative, but it's inside a task/project already assigned to them, or the \"problem\" is described only generically (e.g. \"improved efficiency\") without a named trigger.",
+      "anchor_1": "All bullets describe executing tasks that were already defined for them; no instance of the candidate identifying a problem before being asked to solve it."
+    },
+    {
+      "sort_order": 2,
+      "name": "Spread Beyond the Individual",
+      "weight": 25,
+      "description": "The candidate points to a concrete, stated fact (a number, a timeframe, a named outcome) showing that what they built was picked up and used by other people — not just their own output.",
+      "anchor_5": "A specific, verifiable fact shows adoption by others (a headcount, \"became standard,\" a named team/account using it, a retained process).",
+      "anchor_3": "Adoption is claimed but vague (\"well received,\" \"helped the team\") with no concrete fact attached, or is limited to one or two named colleagues.",
+      "anchor_1": "Every initiative stays confined to the candidate's own metrics; no one else is mentioned as adopting or relying on the result."
+    },
+    {
+      "sort_order": 3,
+      "name": "Ownership Through a Failure or Crisis Moment",
+      "weight": 25,
+      "description": "The CV describes a specific moment something went wrong or was ambiguous (an outage, a vendor surprise, a lost deal, a compliance risk), shows the candidate personally absorbed or resolved it — ideally before someone else felt the impact — and shows they wrote down or shared what happened afterward.",
+      "anchor_5": "Names a specific failure/crisis moment, the candidate's own resolution of it, and a follow-up artifact or shared lesson (a post-mortem, a documented root cause, a retained process change).",
+      "anchor_3": "Describes handling a difficult or ambiguous situation, but there is no unplanned failure/crisis named, or no evidence the lesson was written down or shared with anyone else.",
+      "anchor_1": "CV describes only steady, planned execution toward targets; no unplanned difficulty of any kind is mentioned."
+    },
+    {
+      "sort_order": 4,
+      "name": "Direct Contact with the People Doing the Operational Work",
+      "weight": 20,
+      "description": "The candidate uses specific, concrete language about sitting with or coordinating directly with the actual people executing operational work (named roles — e.g. port officials, frontline account handlers, field engineers) rather than generic references to \"stakeholders\" or \"cross-functional teams.\"",
+      "anchor_5": "Names a specific operational role or frontline group they worked alongside directly, with a concrete instance (not a recurring meeting cadence alone).",
+      "anchor_3": "Mentions cross-functional collaboration, but only in abstract organisational terms (presenting to leadership, \"working with engineering and design\").",
+      "anchor_1": "No operational, customer-facing, or frontline contact is described anywhere in the CV."
+    }
+  ],
+  "SPM": [
+    {
+      "sort_order": 1,
+      "name": "Self-Initiated Problem-Solving",
+      "weight": 25,
+      "description": "The CV shows a pattern — two or more instances across their career, not one anecdote — of independently identifying unassigned, costly problems and building the fix themselves, at increasing scope or stakes over time.",
+      "anchor_5": "Two or more distinct, specific instances, with visibly increasing scope/stakes across them (e.g. team-level, then account-level, then company-level).",
+      "anchor_3": "Exactly one clear instance, or multiple instances at the same, unchanging scale.",
+      "anchor_1": "At most one instance, and only within a narrowly assigned task — same bar as PM score 1."
+    },
+    {
+      "sort_order": 2,
+      "name": "Spread Beyond the Individual, at Scale",
+      "weight": 30,
+      "description": "The self-built solution became the standard for an entire team, function, or company — not a subset of colleagues — with a durable outcome, and the CV shows the candidate drove that adoption themselves rather than it happening incidentally.",
+      "anchor_5": "Adoption is company/function-wide, durable (still in use months+ later, or \"core\"/\"standard\"), and explicitly attributed to the candidate's own effort to spread it.",
+      "anchor_3": "Adoption is real but limited to a subset of colleagues, a short time window, or the candidate's role in driving the spread (vs. it happening on its own) is unclear.",
+      "anchor_1": "Same as PM score 1 — no evidence anyone besides the candidate used or relied on what they built."
+    },
+    {
+      "sort_order": 3,
+      "name": "Independent Ownership Through a Failure or Crisis Moment",
+      "weight": 25,
+      "description": "The candidate resolved a high-stakes, ambiguous situation entirely on their own judgment — no mention of escalating to a manager or waiting for direction — and explicitly documented the lesson in a form other people could use afterward.",
+      "anchor_5": "Explicit \"no escalation\" / solo-judgment language (or clear equivalent) AND a written artifact (post-mortem, SOP, shared write-up) resulting from it.",
+      "anchor_3": "A crisis/failure moment is described and resolved by the candidate, but either the independence (no escalation) or the written follow-up is missing, not both.",
+      "anchor_1": "No such moment is described, or it was handled via an established process/playbook already in place rather than the candidate's own judgment call."
+    },
+    {
+      "sort_order": 4,
+      "name": "Direct Contact with the People Doing the Operational Work",
+      "weight": 20,
+      "description": "Sustained, repeated, specific engagement with frontline operational people over time — not a single visit or one-off interaction — or genuine domain fluency from having done the operational job themselves before this role.",
+      "anchor_5": "Repeated/ongoing operational contact over time (multiple named instances, or prior hands-on experience actually doing the operational job).",
+      "anchor_3": "One clear but isolated instance of direct operational contact.",
+      "anchor_1": "No operational contact described, or it is only secondhand (relayed through someone else's research/interviews)."
+    }
+  ]
+}
