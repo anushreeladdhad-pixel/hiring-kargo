@@ -111,10 +111,30 @@ insert into settings (key, value) values
 on conflict (key) do nothing;
 
 -- Convenience view: total weighted score per candidate per rubric role.
-create or replace view candidate_totals as
+-- security_invoker=on so it respects RLS instead of the view creator's.
+create or replace view candidate_totals
+with (security_invoker = on)
+as
 select
   candidate_id,
   rubric_role,
   round(sum(weighted_points), 2) as total_score
 from candidate_scores
 group by candidate_id, rubric_role;
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- Lock every table down to service_role only. This app has no end-user
+-- auth model (single founder, gated by an app-level access code — see
+-- APP_ACCESS_CODE), so the server always talks to Supabase with the
+-- service_role key, which bypasses RLS entirely. Enabling RLS with zero
+-- policies means the anon/publishable key — which could in principle leak
+-- or be inspected — gets nothing back from PostgREST, including candidate
+-- PII (name, email, phone).
+-- ─────────────────────────────────────────────────────────────────────────
+alter table rubric_criteria enable row level security;
+alter table role_context enable row level security;
+alter table candidates enable row level security;
+alter table candidate_scores enable row level security;
+alter table briefs enable row level security;
+alter table email_drafts enable row level security;
+alter table settings enable row level security;
