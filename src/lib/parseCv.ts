@@ -1,3 +1,21 @@
+import path from 'path';
+
+// pdf.js tries to dynamically import its worker script using a relative
+// path it computes at runtime ("./pdf.worker.mjs"), which Next.js's
+// serverless bundler can't trace statically — the worker file silently
+// doesn't make it into the deployed function, producing
+// "Setting up fake worker failed: Cannot find module ...". Pointing
+// GlobalWorkerOptions at the real on-disk path fixes this. pdfjs-dist is
+// kept external (see next.config.mjs serverComponentsExternalPackages),
+// so it's deployed as a plain node_modules folder — built from
+// process.cwd() rather than require.resolve(), since webpack statically
+// rewrites any literal `require.resolve(...)` call it sees at build time
+// (even through a rebound `require`), which breaks on this ESM-only file.
+const PDFJS_WORKER_SRC = path.join(
+  process.cwd(),
+  'node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs'
+);
+
 /**
  * Extracts text from a PDF using pdfjs-dist directly (actively maintained),
  * with xref-recovery enabled so a damaged/non-standard cross-reference
@@ -7,6 +25,7 @@ async function extractPdfText(buffer: Buffer): Promise<string> {
   // Use the legacy Node build — the standard build assumes a browser/worker
   // environment that doesn't exist server-side.
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
+  pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_SRC;
 
   const loadingTask = pdfjs.getDocument({
     data: new Uint8Array(buffer),
